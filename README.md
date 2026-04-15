@@ -201,7 +201,7 @@ Register it in the `SIGNAL_MAP` dict inside `run_backtest()` and add `"my_signal
 
 ### Requirements
 
-- Python 3.12+
+- Python 3.10–3.13 (recommended: 3.12) — Python 3.14+ is **not yet supported** (numba and the nepse package both cap at `<3.14`)
 - macOS or Linux (Windows: WSL recommended)
 
 ### Installation

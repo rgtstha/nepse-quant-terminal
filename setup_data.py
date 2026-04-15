@@ -14,6 +14,17 @@ Usage:
 
 from __future__ import annotations
 
+import sys
+
+if sys.version_info >= (3, 14):
+    print(
+        "ERROR: Python 3.14+ is not yet supported.\n"
+        "The nepse package and numba both cap at Python <3.14.\n"
+        "Please use Python 3.10 – 3.13 (recommended: 3.12).\n"
+        "  pyenv install 3.12 && pyenv local 3.12"
+    )
+    sys.exit(1)
+
 import argparse
 import gzip
 import shutil

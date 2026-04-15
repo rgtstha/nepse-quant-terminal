@@ -1,4 +1,9 @@
-# Core data
+# ── Python version ────────────────────────────────────────────────────────────
+# Requires Python 3.10 – 3.13. Python 3.14+ is NOT yet supported because
+# numba and the nepse package both cap at <3.14.
+# Recommended: Python 3.12
+
+# ── Core data ─────────────────────────────────────────────────────────────────
 pandas>=2.0
 numpy>=1.24
 scipy>=1.10
@@ -6,11 +11,11 @@ scikit-learn>=1.3
 statsmodels>=0.14
 arch>=6.0
 
-# TUI
+# ── TUI ───────────────────────────────────────────────────────────────────────
 textual>=0.70
 rich>=13.0
 
-# Market data
+# ── Market data ───────────────────────────────────────────────────────────────
 requests>=2.28
 beautifulsoup4>=4.12
 tenacity>=8.0
@@ -18,22 +23,25 @@ feedparser>=6.0
 tqdm>=4.64
 nepse @ git+https://github.com/basic-bgnr/NepseUnofficialApi.git@2f09fbfdcbaf23545d5755b6f11b367324d5b8a4
 
-# Visualisation / reporting
+# ── Visualisation / reporting ─────────────────────────────────────────────────
 matplotlib>=3.7
 plotly>=5.0
 
-# Telegram bot (optional — needed for alerts)
+# ── Telegram alerts (optional) ────────────────────────────────────────────────
 python-telegram-bot>=20.0
 
-# AI agent — local models (optional)
-# Uncomment if using Gemma 4 on Apple Silicon:
+# ── AI agent — local models (optional, Apple Silicon only) ───────────────────
+# Uncomment to use Gemma 4 via MLX:
 # mlx-lm>=0.10
 # mlx-vlm>=0.1
 
-# Testing
-pytest>=7.0
+# ── Validation suite (optional) ───────────────────────────────────────────────
+# numba speeds up the Monte Carlo random baseline 5000x but caps at Python <3.14.
+# The validation suite works without it — just slower on the random baseline step.
+# Install only if you are on Python 3.10–3.13:
+# numba>=0.57
 
-# Misc
+# ── Misc ──────────────────────────────────────────────────────────────────────
 Pillow>=10.0
-numba>=0.57
+pytest>=7.0
 mcp>=1.0
